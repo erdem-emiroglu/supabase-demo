@@ -1,9 +1,7 @@
-import { API_ROUTES } from "@/constants/api-routes";
+import { getClientIpAddress } from '@/lib/ip-utils';
 
 export default async function HomePage() {
-  const ipAddress = await fetch(API_ROUTES.IP_ADDRESS);
-  const data = await ipAddress.json();
-  console.log(data);
+  const data = await getClientIpAddress();
 
   return (
     <main className="flex justify-center items-center h-screen">
